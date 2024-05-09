@@ -12,9 +12,9 @@ int main() {
     // 4. Make a bid
     std::cout << "4. Make a bid" << std::endl;
     // 5. Print wallet
-    std::cout << "Print wallet" << std::endl;
+    std::cout << "5. Print wallet" << std::endl;
     // 6. Continue
-    std::cout << "Continue" << std::endl;
+    std::cout << "6. Continue" << std::endl;
 
     return 0;
 }
