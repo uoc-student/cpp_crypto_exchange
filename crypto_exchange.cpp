@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-int main() {
+void printMenu() {
     // printing a menu for the exchange
     // 1. Printing help
     std::cout << "1: Print help" << std::endl;
@@ -17,36 +17,70 @@ int main() {
     std::cout << "6. Continue" << std::endl;
 
     std::cout << "=========================" << std::endl;
+}
 
-    int userChoice;
-
-    while (true) {
+int getUserOption() {
+    int userOption = 0;
         std::cout << "Choose an option from 1 to 6: " << std::endl;
-        std::cin >> userChoice;
-        std::cout << "You chose option: " << userChoice << std::endl;
+        std::cin >> userOption;
+        std::cout << "You chose option: " << userOption << std::endl;
+        return userOption;
+}
+
+void printHelp() {
+    std::cout << "Printing help..." << std::endl;
+}
+
+void printMarketStats() {
+    std::cout << "Printing exchange stats..." << std::endl;
+}
+
+void enterOffer() {
+    std::cout << "Plase, make an offer..." << std::endl;
+}
+
+void enterBid() {
+    std::cout << "Please, make a bid..." << std::endl;
+}
+
+void printWallet() {
+    std::cout << "Printing wallet..." << std::endl;
+}
+
+void gotoNextTimeFrame() {
+    std::cout << "Going to next time frame..." << std::endl;
+}
+
+void processUserOption(int userOption) {
+    switch(userOption) {
+    case 1:
+        printHelp();
+        break;
+    case 2:
+        printMarketStats();
+        break;
+    case 3:
+        enterOffer();
+        break;
+    case 4:
+        enterBid();
+        break;
+    case 5:
+        printWallet();
+        break;
+    case 6:
+        gotoNextTimeFrame();
+        break;
+    default:
+        std::cout << "Bad input, please chose a valid option!" << std::endl;
+    }
+}
 
 
-        switch(userChoice) {
-        case 1:
-            std::cout << "Printing help..." << std::endl;
-            break;
-        case 2:
-            std::cout << "Printing exchange stats..." << std::endl;
-            break;
-        case 3:
-            std::cout << "Plase, make an offer..." << std::endl;
-            break;
-        case 4:
-            std::cout << "Please, make a bid..." << std::endl;
-            break;
-        case 5:
-            std::cout << "Printing wallet..." << std::endl;
-            break;
-        case 6:
-            std::cout << "Executing..." << std::endl;
-            break;
-        default:
-            std::cout << "Bad input, please chose a valid option!" << std::endl;
-        }
+int main() {
+    while (true) {
+        printMenu();
+        int userOption = getUserOption();
+        processUserOption(userOption);
     }
 }
